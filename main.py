@@ -1,8 +1,12 @@
-def multiply_numbers(a, b)
-    """Функція, яка перемножує два числа."""
+import hashlib
+
+def multiply_numbers(a, b):
     return a * b
 
+def hash_password(password):
+    # Увага: MD5 вважається криптографічно небезпечним!
+    hashed = hashlib.md5(password.encode()).hexdigest()
+    return hashed
 
 if __name__ == "__main__":
-    result = multiply_numbers(5, 5)
-    print(f"Результат: {result}")
+    print(multiply_numbers(5, 5))
