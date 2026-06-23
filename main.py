@@ -1,4 +1,4 @@
-def multiply_numbers(a, b):
+def multiply_numbers(a, b)
     """Функція, яка перемножує два числа."""
     return a * b
 
