@@ -3,7 +3,7 @@ name: Python Code Linting
 on:
   push:
     branches: [ "main" ]
-
+  workflow_dispatch:
 jobs:
   build:
     # На якій операційній системі запускати віртуальну машину
