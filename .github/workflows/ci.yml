@@ -24,7 +24,7 @@ jobs:
     # Крок 3: Встановлюємо інструмент для перевірки коду (лінтер)
     - name: Install dependencies
       run: |
-        python -m pip upgrade pip
+        python -m pip install --upgrade pip
         pip install flake8
 
     # Крок 4: Запускаємо перевірку синтаксису
