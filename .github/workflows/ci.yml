@@ -1,0 +1,34 @@
+name: Python Code Linting
+
+# Тригер: запускати пайплайн при кожному push-коміті в гілку main
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # На якій операційній системі запускати віртуальну машину
+    runs-on: ubuntu-latest
+
+    steps:
+    # Крок 1: Скачуємо код репозиторію на віртуальну машину
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    # Крок 2: Встановлюємо Python потрібної версії
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-node: '3.10'
+
+    # Крок 3: Встановлюємо інструмент для перевірки коду (лінтер)
+    - name: Install dependencies
+      run: |
+        python -m pip upgrade pip
+        pip install flake8
+
+    # Крок 4: Запускаємо перевірку синтаксису
+    - name: Lint code with flake8
+      run: |
+        # Перевірка на критичні помилки синтаксису (Python syntax errors)
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
