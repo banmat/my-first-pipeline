@@ -1,5 +1,4 @@
 name: Python Code Linting
-
 # Тригер: запускати пайплайн при кожному push-коміті в гілку main
 on:
   push:
