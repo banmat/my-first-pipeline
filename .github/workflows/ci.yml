@@ -21,14 +21,18 @@ jobs:
       with:
         python-node: '3.10'
 
-    # Крок 3: Встановлюємо інструмент для перевірки коду (лінтер)
+# Крок 3: Встановлюємо залежності (додано bandit)
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8
+        pip install flake8 bandit
 
-    # Крок 4: Запускаємо перевірку синтаксису
+    # Крок 4: Перевірка синтаксису (залишається як було)
     - name: Lint code with flake8
       run: |
-        # Перевірка на критичні помилки синтаксису (Python syntax errors)
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+    # Крок 5: НОВИЙ ЕТАП - Сканування на вразливості
+    - name: Security scan with Bandit
+      run: |
+        bandit -r .
