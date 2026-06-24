@@ -1,4 +1,4 @@
-from main import multiply_numbers, subtract_numbers
+from main import divide_numbers, multiply_numbers, subtract_numbers
 
 
 def test_multiply_numbers_multiplies_two_positive_numbers():
@@ -19,3 +19,7 @@ def test_subtract_numbers_subtracts_second_number():
 
 def test_subtract_numbers_handles_negative_result():
     assert subtract_numbers(3, 8) == -5
+
+
+def test_divide_numbers_divides_two_numbers():
+    assert divide_numbers(10, 2) == 6

@@ -14,5 +14,9 @@ def hash_password(password):
     return hashed
 
 
+def divide_numbers(a, b):
+    return a / b
+
+
 if __name__ == "__main__":
     print(multiply_numbers(5, 5))
