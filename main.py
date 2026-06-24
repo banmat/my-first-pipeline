@@ -5,6 +5,10 @@ def multiply_numbers(a, b):
     return a * b
 
 
+def subtract_numbers(a, b):
+    return a - b
+
+
 def hash_password(password):
     hashed = hashlib.sha256(password.encode()).hexdigest()
     return hashed
